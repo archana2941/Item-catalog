@@ -1,0 +1,58 @@
+<html>
+
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body><h1> Edit Menu Item </h1>
+
+<form action="#" method = 'post'>
+
+
+	<dl>
+	<dt >Name:</dt>
+		<dd><input type ='text' maxlength="100" name='name' value = '{{item.name }}'></dd>
+	
+	<dt >Description:</dt>
+		<dd><textarea name = 'description' rows='3'  maxlength="250" >{{item.description }}</textarea></dd>
+	
+	<dt >Price:</dt>
+		<dd><input type = 'text' maxlength="10"  name='price' value = '{{item.price}}'></dd>
+	
+	<label for="course">Course:</label>
+		
+		<div class="radio">
+			<label>
+				<input type="radio" name="course" id="course1" value="Appetizer" {% if item.course =='Appetizer'%}checked{%endif%}>Appetizer
+			</label>
+		</div>
+
+		<div class="radio">
+   		    <label>
+				<input type="radio" name="course" id="course2" value="Entree" {% if item.course == 'Entree' %}checked{%endif%}>Entree
+			</label>
+		</div>
+		
+		<div class="radio">
+			<label>
+				<input type="radio" name="course" id="course3" value="Dessert" {% if item.course == 'Dessert'%}checked{%endif%}>Dessert
+			</label>
+		</div>
+		
+		<div class="radio">
+			<label>
+				<input type="radio" name="course" id="course4" value="Beverage" {%if item.course =='Beverage'%}checked{%endif%}>Beverage
+			</label>
+		</div>
+		</dl>
+
+
+<input type='submit' value='Edit'>
+	<a href = '{{url_for('showRestaurants')}}'>
+		<input type='button', value = 'Cancel'>
+	</a>
+
+
+</form>
+</body>
+</html>

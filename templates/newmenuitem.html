@@ -1,0 +1,64 @@
+<html>
+
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+<h1>New Menu Item</h1>
+
+<div >
+	<form action="{{url_for('newMenuItem', restaurant_id=restaurant_id )}}" method = 'POST'>
+		<dl>
+			<dt>Name:</dt>
+				<dd><input type ='text' size='30' name='name' placeholder="Course name"></dd>
+		</dl>
+
+		<dl>
+			<dt>Description:</dt>
+				<dd><textarea class="form-control" maxlength="250" rows="3" name="description" placeholder="Description of the course"></textarea></dd>
+		</dl>
+
+		<dl>
+			<dt>Price:</dt>
+			<dd>
+					
+				<input type ="text" maxlength="10" name="price" placeholder="Price in $">
+			</dd>
+		</dl>
+
+		<label for="course">Course:</label>
+			<div class="radio">
+				<label>
+					<input type="radio" name="course" id="course1" value="Appetizer">Appetizer
+				</label>
+			</div>
+
+			<div class="radio">
+				<label>
+					<input type="radio" name="course" id="course2" value="Entree">Entree
+				</label>
+			</div>
+			
+			<div class="radio">
+				<label>
+					<input type="radio" name="course" id="course3" value="Dessert">Dessert
+				</label>
+			</div>
+			
+			<div class="radio">
+				<label>
+					<input type="radio" name="course" id="course4" value="Beverage">Beverage
+				</label>
+			</div>
+			
+			<input type='submit' value='Create'>
+			
+			<a href = '{{url_for('showRestaurants')}}'>
+				<input type='button', value = 'Cancel'>
+			</a>
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+body            { font-family: sans-serif; background-color: #999966; }
+ h1, h2, h3, h4       { color: #CCCCCC; }
+h1, h2          { font-family: 'Georgia', serif; margin: 0; text-align: center;}
+h1              { border-bottom: 2px solid #eee; }
+
+
+p               { color: #a6a6a6; font-size: 32;}
+
+a {text-decoration: none; color:#FFFFCC; font-size: medium;}
+
+.pane {position:absolute;  border: 2px solid; left: 0%;
+	width: 95%; border-radius: 25px; padding: 5px; margin: 10px; border-color: #95c6e9; background-color: #333333; }
+.header         {left:50%; text-align: center;}
+.name {width:50%;display: inline-block; float: left; color: #999966;
+;}
+.description {}
+.price {text-align: right; width:50%; float: right; color: #999966;
+  }
+.editdeletepane{}
+
+.dt{color: rgb(49, 41, 50);}
+
+.flash          { background: #cee5F5; }
