@@ -40,14 +40,15 @@ import requests
 
 # create instance of Flask class with name of running app.
 app = Flask(__name__)
+app.secret_key = 'super_secret_key'
 
 CLIENT_ID = json.loads(
-    open('client_secrets.json', 'r').read())['web']['client_id']
+    open('/var/www/catalog/client_secrets.json', 'r').read())['web']['client_id']
 APPLICATION_NAME = "Restaurant Menu Application"
 
 
 # Create session and connect to database
-engine = create_engine('sqlite:///restaurantmenuwithusers.db')
+engine = create_engine('postgresql://catalog:password@localhost/catalog')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
@@ -483,6 +484,5 @@ def disconnect():
 
 
 if __name__ == '__main__':
-    app.secret_key = 'super_secret_key'
     app.debug = True
     app.run(host='0.0.0.0', port=5000)
